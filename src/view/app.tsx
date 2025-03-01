@@ -1,4 +1,4 @@
-/* // 1. starting point
+ // 1. starting point
 //------------------------------
 import { useState } from "react";
 import { TopBar } from "./top-bar";
@@ -25,15 +25,15 @@ export function App() {
         />
     </div>
   );
-} */
+} 
 
-/* // 2. Using the Books component instances
+// 2. Using the Books component instances
 //--------------------------------------------
-import { TopBar } from "./top-bar";
+/* import { TopBar } from "./top-bar";
 import { UserInput } from "./user-input";
 import { Books } from "./books";
 
-export default function App() {
+export function App() {
   return (
     <div className="app">
       <TopBar>React Components are state machines</TopBar>
@@ -49,17 +49,17 @@ export default function App() {
         />
     </div>
   );
-} */
+}  */
 
-/* // 3. Using the 3 different components
+// 3. Using the 3 different components
 //--------------------------------------------
-import { TopBar } from "./top-bar";
+/* import { TopBar } from "./top-bar";
 import { UserInput } from "./user-input";
 import { Books } from "./books";
 import { Customers } from "./customers";
 import { Employees } from "./employees";
 
-export default function App() {
+export function App() {
   return (
     <div className="app">
       <TopBar>React Components are state machines</TopBar>
@@ -75,11 +75,11 @@ export default function App() {
         />
     </div>
   );
-} */
-
+} 
+ */
 // 4. Using the 3 Counter instances with props
 //--------------------------------------------
-import { TopBar } from "./top-bar";
+/* import { TopBar } from "./top-bar";
 import { UserInput } from "./user-input";
 import { Counter } from "./counter";
 
@@ -99,7 +99,7 @@ export function App() {
         />
     </div>
   );
-}
+}  */
 
 //------------------------------
 //          Phase 1

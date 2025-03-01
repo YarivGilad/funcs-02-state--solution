@@ -13,8 +13,8 @@ export function Books() {
   );
 }
 
-/* 
-import { Component } from "react";
+
+/* import { Component } from "react";
 
 interface State {
     booksCount: number;
@@ -39,4 +39,4 @@ export class Books extends Component<object,State> {
     );
   }
 }
- */
+  */

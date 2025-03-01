@@ -1,5 +1,5 @@
 
-import { useState, ChangeEvent } from "react";
+import { useState, ChangeEvent, useEffect, useRef } from "react";
 
 interface Props {
   question: string;
@@ -8,16 +8,47 @@ interface Props {
 
 export function UserInput({ question, placeholder }:Props) {
   const [output, setOutput] = useState<string>("???");
+  const [flag, setFlag] = useState(true);
+
+  const myInput = useRef<HTMLInputElement>(null);
+  const count = useRef(8);
+
+  useEffect(()=> {
+    console.log('UserInput render')
+    return ()=> console.log('cleanup code');
+  },[])
+
+  useEffect(()=> {
+    console.log('flag was changed');
+    // return ()=> console.log('flag cleanup code')
+  },[flag])
+
+
+  // function onInputUpdate(event:ChangeEvent<HTMLInputElement>){
+    // const txt = event.target.value
+  function onInputUpdate(){
+    if(!myInput.current) return
+    const txt = myInput.current.value
+    count.current++;
+    setOutput(txt);
+    
+
+    if(txt.length % 3 === 0 ){
+      setFlag(!flag);
+    }
+  }
 
   return (
     <div className="vbox mt20">
       <div className="hbox space-between">
         <h1 className="paragraph">{question}</h1>
+        <h1 className="paragraph">count: {count.current}</h1>
         <input
+          ref={myInput}
           type="text"
           className="input cap"
           placeholder={placeholder}
-          onChange={(event:ChangeEvent<HTMLInputElement>) => setOutput(event.target.value)}
+          onChange={onInputUpdate}
         />
       </div>
       <br />
